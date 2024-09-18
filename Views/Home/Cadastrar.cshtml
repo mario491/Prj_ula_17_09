@@ -1,0 +1,45 @@
+﻿
+
+@{
+@model Pessoa
+
+}
+
+
+<h2>Cadastro de Pessoa</h2>
+
+
+
+
+<form asp-action="Cadastrar" method="post">
+    <label for="Id">ID:</label>
+    <input type="text" id="Id" name="Id" /><br />
+
+    <label for="Nome">Nome:</label>
+    <input type="text" id="Nome" name="Nome" /><br />
+
+    
+    <div>
+    <input type="radio" id="Genero" name="Genero" value="Masculino" /><br />   <label for="Genero">Masculino:</label>
+    <input type="radio" id="Genero" name="Genero" value="Feminino" /><br /> <label for="Genero">Feminino:</label>
+
+    </div>
+    <select name="Naturalidade" id="Naturalidade">
+        <option value="">Selecione uma província</option>
+        <option value="GZ">Gaza</option>
+        <option value="SF">Sofala</option>
+        <option value="">...</option>
+
+
+       
+    </select>
+
+  
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+@if (ViewBag.messagem != null)
+{
+    <div style="color: green;">@ViewBag.messagem</div>
+}

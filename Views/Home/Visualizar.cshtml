@@ -1,0 +1,32 @@
+﻿@model List<projecto_Aula_16_09.Models.Pessoa>
+
+<h2>Lista de Cadastros</h2>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Gênero</th>
+                <th>Naturalidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pessoa in Model)
+            {
+                <tr>
+                    <td>@pessoa.Id</td>
+                    <td>@pessoa.Nome</td>
+                    <td>@pessoa.Genero</td>
+                    <td>@pessoa.Naturalidade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum cadastro encontrado.</p>
+}
